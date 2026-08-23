@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aiforge"
+version = "0.1.0"
+description = "AI-Native Software Delivery & Operations Platform — Agent Runtime"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.27",
+]
+
+[project.scripts]
+aiforge = "aiforge.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["aiforge*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

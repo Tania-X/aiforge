@@ -60,6 +60,7 @@ def register_builtin_tools(registry: ToolRegistry, cwd: str | Path = ".") -> Non
             "required": ["path"],
         },
         read_file,
+        requires_approval=True,  # 读文件属敏感操作: 默认需审批(工具权限/审批路线图项)
     )
     registry.register(
         "echo",

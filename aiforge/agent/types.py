@@ -16,6 +16,8 @@ class ToolCall:
 class ToolResult:
     name: str
     output: str
+    # 需审批的工具被拦截时置 True(调用方应提示用户审批, 通过后走 execute_approved)
+    needs_approval: bool = False
 
 
 @dataclass
